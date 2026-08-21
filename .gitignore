@@ -1,0 +1,58 @@
+# ─── Sensitive configuration ────────────────────────────────────────────────
+# config.php may contain a real Pixelcut API key.
+# Add it to .gitignore and use environment variables instead (see README).
+config.php
+
+# .env files (alternative secret storage)
+.env
+.env.*
+!.env.example
+
+# ─── Runtime / generated directories ────────────────────────────────────────
+# These folders are created automatically at runtime and should not be committed.
+uploads/
+outputs/
+
+# ─── PHP ────────────────────────────────────────────────────────────────────
+vendor/
+composer.lock
+
+# ─── OS generated files ─────────────────────────────────────────────────────
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs:quarantine
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# ─── Editor / IDE ────────────────────────────────────────────────────────────
+# VS Code / Cursor
+.vscode/
+.cursor/
+*.code-workspace
+
+# PhpStorm / IntelliJ
+.idea/
+*.iml
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# ─── Logs ────────────────────────────────────────────────────────────────────
+*.log
+php_error.log
+
+# ─── Misc ────────────────────────────────────────────────────────────────────
+*.bak
+*.swp
+*.tmp

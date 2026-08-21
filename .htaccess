@@ -1,0 +1,33 @@
+# ClearCut — Root .htaccess
+# Basic security headers and access control.
+
+# Disable directory listing
+Options -Indexes
+
+# Hide the server signature
+ServerSignature Off
+
+# Deny direct browser access to the configuration file
+<FilesMatch "^config\.php$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Deny access to hidden files (e.g. .env, .git)
+<FilesMatch "^\.">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Deny access to README and raw text files that contain setup notes
+<FilesMatch "\.(md|txt|log)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Add basic security headers
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
